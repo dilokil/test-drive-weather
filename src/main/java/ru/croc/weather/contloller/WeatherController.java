@@ -42,7 +42,7 @@ public class WeatherController {
                 latitude,
                 longitude
         );
-        if (response.getStatusCode() != HttpStatus.ACCEPTED) {
+        if (response.getStatusCode() == HttpStatus.OK) {
             return ResponseEntity
                     .ok()
                     .body(weatherService.getFactWeather(response.getBody()));
